@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriulas - Sistema Escolar</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/forms.css" />
+
+</head>
+<div class="form-container">
+        <div class="form-header">
+            <h2>📝 Gestión de Matrículas</h2>
+            <a href="../index.html" class="btn-back">← Volver al Menú</a>
+        </div>
+        <!--area para mensajes-->
+        <div id="mensaje" class="mensaje" style="display: none;"></div>
+
+        <div form class="form" id="form-matriculas">
+            <input type="hidden" id="id-matricula" name="id">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="id-estudiante">ID del Estudiante:</label>
+                    <input type="number" id="id-estudiante" name="id_estudiante" required>
+                    </div>
+
+                    <div class="form-group
+                    <label for="id-curso>"ID del Curso:</label>
+                    <input type="number" id="id-curso" name="id_curso" required>
+                    <div class="form-group">
+                        <label for="fecha-matricula">Fecha de Matrícula:</label>
+                        <input type="date" id="fecha-matricula" name="fecha_matricula" required>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/validation.js"></script>
+    <script>
+        //inicializar la pagina de matriculas
+        document.addEventListener("DOMContentLoaded", function() {
+            const gestorMatriculas = new Gestormodulo('matriculas');
+            gestorMatriculas.inicializar();
+        });
+    </script>
+</body>
+</html>

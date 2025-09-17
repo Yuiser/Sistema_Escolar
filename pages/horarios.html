@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HORARIOS - Sistema Escolar</title>
+        <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/forms.css" />
+
+</head>
+<body>
+<div class="from form-container">
+    <div class="form-header">
+        <h2>⏱️Gestión de Horarios</h2>
+        <a href="../index.html" class="btn btn-back">Volver al menú</a>
+        </div>
+
+        <!--area para mensajes-->
+        <div id="mensaje" class="mensaje" style="display: none;"></div>
+
+        <div form class="form" id="form-horarios">
+            <input type="hidden" id="id-horario" name="id">
+
+            <div class="form-row">
+                <div class="form-group"></div>
+                    <label for="dia-semana">Día de la Semana:</label>
+                    <input type="text" id="dia-semana" name="dia_semana" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-inicio">Hora de Inicio:</label>
+                        <input type="time" id="hora-inicio" name="hora_inicio" required>    
+                    </div>
+                    <div class="form-group">
+                        <label for="hora-fin">Hora de Fin:</label>
+                        <input type="time" id="hora-fin" name="hora_fin" required>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/validation.js"></script>
+    <script>
+        //inicializar la pagina de horarios
+        document.addEventListener("DOMContentLoaded", function() {
+            const gestorHorarios = new Gestormodulo('horarios');
+            gestorHorarios.inicializar();
+        });
+    </script>
+</body>
+</html>

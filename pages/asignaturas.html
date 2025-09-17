@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignaturas - Sistema Escolar</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/forms.css" />    
+
+</head>
+<div class="form-container">
+        <div class="form-header">
+            <h2>📚 Gestión de asignaturas</h2>
+            <a href="../index.html" class="btn-back">← Volver al Menú</a>
+        </div>
+
+        <!--area para mensajes-->
+        <div id="mensaje" class="mensaje" style="display: none;"></div>
+
+        <div form class="form" id="form-asignaturas">
+            <input type="hidden" id="id-asignatura" name="id">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre-asignatura">Nombre de Asignatura:</label>
+                    <input type="text" id="nombre-asignatura" name="nombre_asignatura" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción:</label>
+                        <input type="text" id="descripcion" name="descripcion" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/validation.js"></script>
+    <script>
+        //inicializar la pagina de asignaturas
+        document.addEventListener("DOMContentLoaded", function() {
+            const gestorAsignaturas = new Gestormodulo('asignaturas');
+            gestorAsignaturas.inicializar();
+        });
+    </script>
+</body>
+</html>
