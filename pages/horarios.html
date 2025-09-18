@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div class="from form-container">
+<div class="form-container">
     <div class="form-header">
         <h2>⏱️Gestión de Horarios</h2>
         <a href="../index.html" class="btn btn-back">Volver al menú</a>
@@ -18,27 +18,32 @@
         <!--area para mensajes-->
         <div id="mensaje" class="mensaje" style="display: none;"></div>
 
-        <div form class="form" id="form-horarios">
+        <form class="form" id="form-horarios">
             <input type="hidden" id="id-horario" name="id">
 
             <div class="form-row">
-                <div class="form-group"></div>
+                <div class="form-group">
                     <label for="dia-semana">Día de la Semana:</label>
                     <input type="text" id="dia-semana" name="dia_semana" required>
                     </div>
+
                     <div class="form-group">
                         <label for="hora-inicio">Hora de Inicio:</label>
                         <input type="time" id="hora-inicio" name="hora_inicio" required>    
                     </div>
+
                     <div class="form-group">
                         <label for="hora-fin">Hora de Fin:</label>
                         <input type="time" id="hora-fin" name="hora_fin" required>
                     </div>
-                </div> 
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display: none;">Cancelar</button>
+                <button type="reset" class="btn btn-outline">Limpiar</button>
             </div>
         </form>
-    </div>
-
+</div>
     <script src="../assets/js/api.js"></script>
     <script src="../assets/js/validation.js"></script>
     <script>

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../assets/css/forms.css">
 </head>
 <body>
-    <div class="form container">
-    </div class="form header">
+    <div class="form-container">
+        <div class="form-header">
         <h2>👨‍🏫Gestion de Profesores</h2>
         <a href="../index.html" class="btn-back">← Volver al Menú</a>
     </div>
@@ -21,9 +21,9 @@
         <input type="hidden" id="profesor-id">
         
         <div class="form-row">
-        </div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+            <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
         </div>
 
         <div class="form-group">
@@ -34,8 +34,8 @@
 
     <div class="form-row">
         <div class="form-group">
-            <label for="materia">Materia:</label>
-            <input type="text" id="materia" name="materia" required>
+            <label for="materia">Especialidad:</label>
+            <input type="text" id="Especialidad" name="Especialidad" required>
         </div>
 
         <div class="form-group">
@@ -47,11 +47,11 @@
             <input type="tel" id="telefono" name="telefono" required>
         </div>
     </div>
-    <div class="form-actions">
-        <button type="submit" class="btn-submit">Guardar</button>
-        <button type="button" id="btn-cancelar" class="btn-cancelar" style="display: none;">Cancelar</button>
-        <button type="reset" class="btn btn-outline">Limpiar</button>
-    </div>
+     <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display: none;">Cancelar</button>
+                <button type="reset" class="btn btn-outline">Limpiar</button>
+            </div>
     </form>
      <!-- Tabla de profesores -->
       <div class="data-table">

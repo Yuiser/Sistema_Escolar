@@ -17,7 +17,7 @@
         <!--area para mensajes-->
         <div id="mensaje" class="mensaje" style="display: none;"></div>
 
-        <div form class="form" id="form-usuarios">
+        <form class="form" id="form-usuarios">
             <input type="hidden" id="id-usuario" name="id">
 
             <div class="form-row">
@@ -30,13 +30,27 @@
                         <label for="contrasena">Contraseña:</label>
                         <input type="password" id="contrasena" name="contrasena" required>
                     </div>
-                    <div class="form-actions">
+            </div>
+
+         <div class="form-actions">
           <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
           <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display:none">Cancelar</button>
           <button type="reset" class="btn btn-outline" id="btn-limpiar">Limpiar</button>
         </div>
-        </div>
+     </form>
+     <!-- Tabla para mostrar los usuarios -->
+      <div class="table-header">
+        <h3>Usuarios registrados <span id="total-registros">(0)</span></h3>
+        <button class="btn btn-primary" id="btn-actualizar">🔄 Actualizar</button>
     </div>
+    <div id="loading" class="loadin-state" style="display: none;">
+        <p>Cargando datos...</p>
+    </div>
+    <div id=" empty-state" class="empty-state" style="display: none;">
+        <p>No hay usuarios registrados aún.</p>
+    </div>
+</div>
+
     <script src="../assets/js/api.js"></script>
     <script src="../assets/js/validation.js"></script>
     <script>
