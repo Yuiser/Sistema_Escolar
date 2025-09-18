@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Usuarios - Sistema Escolar</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/forms.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="form-container">
-        <div class="form-header">
-            <h2> 👤Gestión de Usuarios</h2>
-            <a href="../index.html" class="btn-back">← Volver al Menú</a>
+      <div class="form-header">
+        <h2>👤Gestión de Usuarios</h2>
+        <a href="../index.html" class="btn-back">← Volver al Menú</a>
+      </div>
+
+      <!--area para mensajes-->
+      <div id="mensaje" class="mensaje" style="display: none"></div>
+
+      <form class="form" id="form-usuarios">
+        <input type="hidden" id="id-usuario" name="id" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre-usuario">Nombre de Usuario:</label>
+            <input
+              type="text"
+              id="nombre-usuario"
+              name="nombre_usuario"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required />
+          </div>
         </div>
 
-        <!--area para mensajes-->
-        <div id="mensaje" class="mensaje" style="display: none;"></div>
-
-        <form class="form" id="form-usuarios">
-            <input type="hidden" id="id-usuario" name="id">
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="nombre-usuario">Nombre de Usuario:</label>
-                    <input type="text" id="nombre-usuario" name="nombre_usuario" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" id="contrasena" name="contrasena" required>
-                    </div>
-            </div>
-
-         <div class="form-actions">
-          <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
-          <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display:none">Cancelar</button>
-          <button type="reset" class="btn btn-outline" id="btn-limpiar">Limpiar</button>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="btn-guardar">
+            Guardar
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="btn-cancelar"
+            style="display: none"
+          >
+            Cancelar
+          </button>
+          <button type="reset" class="btn btn-outline" id="btn-limpiar">
+            Limpiar
+          </button>
         </div>
-     </form>
-     <!-- Tabla para mostrar los usuarios -->
+      </form>
+      <!-- Tabla para mostrar los usuarios -->
       <div class="table-header">
         <h3>Usuarios registrados <span id="total-registros">(0)</span></h3>
-        <button class="btn btn-primary" id="btn-actualizar">🔄 Actualizar</button>
-    </div>
-    <div id="loading" class="loadin-state" style="display: none;">
+        <button class="btn btn-primary" id="btn-actualizar">
+          🔄 Actualizar
+        </button>
+      </div>
+      <div id="loading" class="loadin-state" style="display: none">
         <p>Cargando datos...</p>
-    </div>
-    <div id=" empty-state" class="empty-state" style="display: none;">
+      </div>
+      <div id=" empty-state" class="empty-state" style="display: none">
         <p>No hay usuarios registrados aún.</p>
+      </div>
     </div>
-</div>
 
     <script src="../assets/js/api.js"></script>
     <script src="../assets/js/validation.js"></script>
     <script>
-        //inicializar la pagina de usuarios
-        document.addEventListener("DOMContentLoaded", function() {
-            const gestorUsuarios = new Gestormodulo('usuarios');
-            gestorUsuarios.inicializar();
-        });
+      //inicializar la pagina de usuarios
+      document.addEventListener("DOMContentLoaded", function () {
+        const gestorUsuarios = new Gestormodulo("usuarios");
+        gestorUsuarios.inicializar();
+      });
     </script>
-</body>
+  </body>
 </html>

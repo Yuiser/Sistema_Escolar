@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roles - sistema escolar</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/forms.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/forms.css" />
+  </head>
+  <body>
     <div class="form-container">
-        <div class="form-header">
-            <h2> Gestión de Roles</h2>
-            <a href="../index.html" class="btn-back">← Volver al Menú</a>
-        </div>
-    
-        <!-- Área para mensajes -->
-        <div id="mensaje" class="mensaje" style="display: none;"></div>
+      <div class="form-header">
+        <h2>Gestión de Roles</h2>
+        <a href="../index.html" class="btn-back">← Volver al Menú</a>
+      </div>
 
-        <form class="form" id="form-rol">
-            <input type="hidden" id="rol-id" name="id">
+      <!-- Área para mensajes -->
+      <div id="mensaje" class="mensaje" style="display: none"></div>
 
-            <div class="form-row">
-                <div class="form-group">
-                <label for="nombre">Nombre del Rol:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                </div> 
-             </div>
-            
-               <div class="form-actions">
-                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
-                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display: none;">Cancelar</button>
-                <button type="reset" class="btn btn-outline">Limpiar</button>
-            </div>
-        </form>
-        <!-- Tabla de roles -->
-        <div class="data-table">
-            <div class="table-header">
-                <h3>Lista de Roles</h3>
-                <input type="text" id="buscar-rol" placeholder="Buscar rol...">
-                <button class="btn btn-primary" id="btn-actualizar">🔄 Actualizar</button>   
-            </div>
+      <form class="form" id="form-rol">
+        <input type="hidden" id="rol-id" name="id" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre del Rol:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
         </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="btn-guardar">
+            Guardar
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="btn-cancelar"
+            style="display: none"
+          >
+            Cancelar
+          </button>
+          <button type="reset" class="btn btn-outline">Limpiar</button>
+        </div>
+      </form>
+      <!-- Tabla de roles -->
+      <div class="data-table">
+        <div class="table-header">
+          <h3>Lista de Roles</h3>
+          <input type="text" id="buscar-rol" placeholder="Buscar rol..." />
+          <button class="btn btn-primary" id="btn-actualizar">
+            🔄 Actualizar
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="../assets/js/api.js"></script>
     <script src="../assets/js/validation.js"></script>
-   <script>
-    //inicialiZar funciones
-     document.addEventListener('DOMContentLoaded', function() {
-            const gestorEstudiantes = new GestorModulo('estudiantes');
-            gestorEstudiantes.inicializar();
-        });
+    <script>
+      //inicialiZar funciones
+      document.addEventListener("DOMContentLoaded", function () {
+        const gestorEstudiantes = new GestorModulo("estudiantes");
+        gestorEstudiantes.inicializar();
+      });
     </script>
-
-</body>
+  </body>
 </html>

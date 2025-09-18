@@ -1,111 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estudiantes - Sistema Escolar</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/forms.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/forms.css" />
+  </head>
+  <body>
     <div class="form-container">
-        <div class="form-header">
-            <h2>👨‍🎓 Gestión de Estudiantes</h2>
-            <a href="../index.html" class="btn-back">← Volver al Menú</a>
-        </div>
-        
-        <!-- Área para mensajes -->
-        <div id="mensaje" class="mensaje" style="display: none;"></div>
-        
-        <form class="form" id="form-estudiantes">
-            <input type="hidden" id="id-estudiante" name="id">
-            
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" required>
-                </div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
-                    <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-            </div>
+      <div class="form-header">
+        <h2>👨‍🎓 Gestión de Estudiantes</h2>
+        <a href="../index.html" class="btn-back">← Volver al Menú</a>
+      </div>
 
-            <div class="form-row">
-            <div class="form-group">
-                <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            </div>
-            
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
-                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display: none;">Cancelar</button>
-                <button type="reset" class="btn btn-outline">Limpiar</button>
-            </div>
-        </form>
-        
-        <!-- Tabla de estudiantes -->
-        <div class="data-table">
-            <div class="table-header">
-                <h3>📋 Estudiantes Registrados <span id="total-registros">(0)</span></h3>
-                <button class="btn btn-primary" id="btn-actualizar">🔄 Actualizar</button>
-            </div>
-            
-            <div id="loading" class="loading-state" style="display: none;">
-                <p>Cargando datos...</p>
-            </div>
-            
-            <div id="empty-state" class="empty-state" style="display: none;">
-                <p>No hay estudiantes registrados aún.</p>
-            </div>
-            
-            <div class="table-responsive" id="tabla-container" style="display: none;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Fecha Nacimiento</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-estudiantes">
-                        <!-- Datos cargados dinámicamente -->
-                    </tbody>
-                </table>
-            </div>
+      <!-- Área para mensajes -->
+      <div id="mensaje" class="mensaje" style="display: none"></div>
+
+      <form class="form" id="form-estudiantes">
+        <input type="hidden" id="id-estudiante" name="id" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required />
+          </div>
         </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+            <input
+              type="date"
+              id="fecha-nacimiento"
+              name="fecha_nacimiento"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="btn-guardar">
+            Guardar
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="btn-cancelar"
+            style="display: none"
+          >
+            Cancelar
+          </button>
+          <button type="reset" class="btn btn-outline">Limpiar</button>
+        </div>
+      </form>
+
+      <!-- Tabla de estudiantes -->
+      <div class="data-table">
+        <div class="table-header">
+          <h3>
+            📋 Estudiantes Registrados <span id="total-registros">(0)</span>
+          </h3>
+          <button class="btn btn-primary" id="btn-actualizar">
+            🔄 Actualizar
+          </button>
+        </div>
+
+        <div id="loading" class="loading-state" style="display: none">
+          <p>Cargando datos...</p>
+        </div>
+
+        <div id="empty-state" class="empty-state" style="display: none">
+          <p>No hay estudiantes registrados aún.</p>
+        </div>
+
+        <div
+          class="table-responsive"
+          id="tabla-container"
+          style="display: none"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha Nacimiento</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-estudiantes">
+              <!-- Datos cargados dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    
+
     <script src="../assets/js/api.js"></script>
     <script src="../assets/js/validation.js"></script>
     <script>
-        // Inicializar página de estudiantes
-        document.addEventListener('DOMContentLoaded', function() {
-            const gestorEstudiantes = new GestorModulo('estudiantes');
-            gestorEstudiantes.inicializar();
-        });
+      // Inicializar página de estudiantes
+      document.addEventListener("DOMContentLoaded", function () {
+        const gestorEstudiantes = new GestorModulo("estudiantes");
+        gestorEstudiantes.inicializar();
+      });
     </script>
-</body>
+  </body>
 </html>
