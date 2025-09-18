@@ -17,7 +17,7 @@
         <!--area para mensajes-->
         <div id="mensaje" class="mensaje" style="display: none;"></div>
 
-        <div form class="form" id="form-asignaturas">
+         <form class="form" id="form-asignaturas">
             <input type="hidden" id="id-asignatura" name="id">
 
             <div class="form-row">
@@ -31,9 +31,22 @@
                         <input type="text" id="descripcion" name="descripcion" required>
                     </div>
                 </div>
+                <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
+                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display: none;">Cancelar</button>
+                <button type="reset" class="btn btn-outline">Limpiar</button>
             </div>
-        </div>
-    </div>
+        </form>
+        <!-- Tabla de asignaturas -->
+                 <div class="data-table">
+                    <div class="table-header">
+                        <h3>Lista de Asignaturas</h3>
+                        <input type="text" id="buscar-asignatura" placeholder="Buscar asignatura...">
+                    </div>
+                 </div>
+</div>
+                
+    
     <script src="../assets/js/api.js"></script>
     <script src="../assets/js/validation.js"></script>
     <script>
