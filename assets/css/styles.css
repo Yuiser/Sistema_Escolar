@@ -67,3 +67,19 @@ body {
 .dropdown > a::after {
   content: "";
 }
+/* Estilos para el pie de página */
+footer {
+  text-align: center; /* Centra el texto */
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8; /* Color de fondo */
+}
+
+footer .registered {
+  font-weight: bold; /* Resaltar el ícono de la "R" */
+  margin-left: 5px;
+}
